@@ -64,6 +64,8 @@ CKEDITOR.editorConfig = function( config ) {
 		'toolbar,' +
 		'undo,' +
 		'wysiwygarea';
+		config.disableNativeSpellChecker = false;
+        config.allowedContent = true;
 	// %REMOVE_END%
 };
 
