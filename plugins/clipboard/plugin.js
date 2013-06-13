@@ -378,7 +378,8 @@
 			// If the "contextmenu" plugin is loaded, register the listeners.
 			if ( editor.contextMenu ) {
 				editor.contextMenu.addListener( function( element, selection ) {
-					inReadOnly = selection.getRanges()[ 0 ].checkReadOnly();
+					var ranges = selection.getRanges();
+					inReadOnly = ranges && ranges.length && ranges[ 0 ].checkReadOnly();
 					return {
 						cut: stateFromNamedCommand( 'Cut' ),
 						copy: stateFromNamedCommand( 'Copy' ),
